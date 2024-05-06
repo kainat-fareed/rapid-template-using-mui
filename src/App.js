@@ -4,12 +4,17 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import Header from "./components/header/header";
 import HeroSection from "./components/hero-section/hero-section";
 
-function App() {
 
+import "./App.css"
+
+
+function App() {
   return (
     <div className="App">
-      <Header/>
-      <HeroSection/>
+      <div class="bg-image">
+        <Header />
+        <HeroSection />
+      </div>
     </div>
   );
 }

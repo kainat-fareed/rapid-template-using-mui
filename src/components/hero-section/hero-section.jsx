@@ -1,17 +1,19 @@
 import React from "react";
 import HeroImage from "../../assets/images/intro-img.svg";
 import { Box, Button } from "@mui/material";
-// import "./hero-section-style.css";
+import "./style/hero-section.css";
 
 export const HeroSection = () => {
   return (
     <>
-      <Box class="container">
+      <Box class="container d-flex align-items-center hero-section">
         <Box class="row">
-          <Box class="col-md-6">
-            <h1>Rapid Solutions for Your Business!</h1>
+          <Box className="col-md-6 d-flex align-items-center">
             <Box>
-            <Button variant="contained">GET STARTED</Button>
+              <h1>Rapid Solutions for Your Business!</h1>
+              <Box>
+                <Button variant="contained">GET STARTED</Button>
+              </Box>
             </Box>
           </Box>
 

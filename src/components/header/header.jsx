@@ -21,7 +21,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 
 // import BackgroundImage from "../../assets/images/intro-bg.jpg";
 
-const drawerWidth = 240;
+const drawerWidth = 300;
 const navItems = [
   "HOME",
   "ABOUT",
@@ -36,6 +36,7 @@ const MuiAppBar = (props) => {
   const { window } = props;
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -71,25 +72,23 @@ const MuiAppBar = (props) => {
 
   return (
     <>
-      <div class="bg-image">
+      <div>
         <Box sx={{ display: "flex" }}>
           <CssBaseline />
 
-          <AppBar
-            style={{ background: "none" }}
-            component="nav"
-            // position="absolute"
-          >
-            <Toolbar>
+          <AppBar  style={{ background: "none", boxShadow:'none' }} component="nav">
+            <Toolbar className="container">
+              <Box className="d-flex d-block d-md-none " sx={{border: '1px solid red', width:'100%', justifyContent:'flex-end'}}>
               <IconButton
                 color="inherit"
                 aria-label="open drawer"
-                edge="start"
+                edge="end"
                 onClick={handleDrawerToggle}
-                sx={{ mr: 2, display: { sm: "none" } }}
+                sx={{ mr: 2, display: { sm: "none" } , }}
               >
-                <MenuIcon />
+                <MenuIcon sx={{color: '#514E7F'}} />
               </IconButton>
+              </Box>
 
               <Typography
                 variant="h6"
@@ -107,7 +106,7 @@ const MuiAppBar = (props) => {
                 RAPID
               </Typography>
 
-              <Box sx={{ display: { xs: "none", sm: "block" } }}>
+              <Box>
                 {navItems.map((item) => (
                   <Button
                     key={item}
@@ -117,14 +116,22 @@ const MuiAppBar = (props) => {
                   </Button>
                 ))}
 
-                {/* ICONS */}
-
-
+                <IconButton size="large" aria-label="" color="inherit">
+                  <TwitterIcon sx={{ color: "#514E7F" }} />
+                </IconButton>
+                <IconButton>
+                  <FacebookIcon sx={{ color: "#514E7F" }} />
+                </IconButton>
+                <IconButton>
+                  <LinkedInIcon sx={{ color: "#514E7F" }} />
+                </IconButton>
+                <IconButton>
+                  <InstagramIcon sx={{ color: "#514E7F" }} />
+                </IconButton>
               </Box>
-
-             
             </Toolbar>
           </AppBar>
+
           <nav>
             <Drawer
               container={container}
@@ -135,7 +142,7 @@ const MuiAppBar = (props) => {
                 keepMounted: true, // Better open performance on mobile.
               }}
               sx={{
-                display: { xs: "block", sm: "none" },
+                display: { md: "none"},
                 "& .MuiDrawer-paper": {
                   boxSizing: "border-box",
                   width: drawerWidth,
