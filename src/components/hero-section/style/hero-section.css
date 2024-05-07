@@ -1,4 +1,19 @@
-.hero-section{
-    height: 90vh;
-
+.hero-section {
+  height: 100%;
 }
+
+.text-32{
+    font-size: 32px;
+}
+
+.btn-get-started{
+    font-size: 16px;
+    color: #fff;
+    background-color: #1bb1dc !important;
+    letter-spacing: 1px !important;
+}
+
+    
+    
+    
+    

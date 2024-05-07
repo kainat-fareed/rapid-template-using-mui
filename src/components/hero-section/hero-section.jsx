@@ -6,20 +6,29 @@ import "./style/hero-section.css";
 export const HeroSection = () => {
   return (
     <>
-      <Box class="container d-flex align-items-center hero-section">
-        <Box class="row">
-          <Box className="col-md-6 d-flex align-items-center">
+      <Box className="container d-flex align-items-center hero-section">
+        <Box className="row gy-3">
+          <Box className="col-md-6 d-flex align-items-center order-last order-md-first order-lg-first">
             <Box>
-              <h1>Rapid Solutions for Your Business!</h1>
-              <Box>
-                <Button variant="contained">GET STARTED</Button>
+              <h1 className="montserrat-font font-dark-grey text-32 fw-bold text-center text-sm-center text-md-start">
+                Rapid Solutions for Your{" "}
+                <span className="text-light-blue">Business!</span>
+              </h1>
+
+              <Box className="d-flex justify-content-center justify-content-md-start">
+                <Button
+                  className="montserrat-font btn-get-started fw-bold px-4 py-2 rounded-1 mt-4"
+                  variant="contained"
+                >
+                  GET STARTED
+                </Button>
               </Box>
             </Box>
           </Box>
 
-          <Box class="col-md-6">
+          <Box className="col-md-6">
             <Box>
-              <img class="img-fluid" src={HeroImage} alt="Group" />
+              <img className="img-fluid" src={HeroImage} alt="Group" />
             </Box>
           </Box>
         </Box>

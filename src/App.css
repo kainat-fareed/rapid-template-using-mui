@@ -1,4 +1,31 @@
-.bg-image{
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+.bg-image {
   background-image: url("./assets/images/intro-bg.jpg");
   background-size: cover;
+}
+
+:root {
+  --primary-font-family: "Montserrat", sans-serif;
+}
+
+.montserrat-font {
+  font-family: var(--primary-font-family);
+}
+
+:root {
+  --secondary-font-family: "Open Sans", sans-serif;
+}
+
+.opens-font {
+  font-family: var(--secondary-font-family);
+}
+
+.font-dark-grey {
+  color: #413e66 !important;
+}
+
+.text-light-blue {
+  color: #1bb1dc !important;
 }

@@ -18,8 +18,8 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
-
-// import BackgroundImage from "../../assets/images/intro-bg.jpg";
+import "./style/header-style.css";
+import { colors } from "@mui/material";
 
 const drawerWidth = 300;
 const navItems = [
@@ -37,14 +37,16 @@ const MuiAppBar = (props) => {
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+      <Typography
+        variant="h6"
+        sx={{ my: 2, fontWeight: "bold", fontFamily: "Montserrat, sans-serif" }}
+      >
         RAPID
       </Typography>
       <Divider />
@@ -52,17 +54,20 @@ const MuiAppBar = (props) => {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <ListItemText
+                primary={item}
+                sx={{ fontFamily: "Montserrat, sans-serif" }}
+              />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
 
       <IconButton size="large" aria-label="" color="inherit">
-        <TwitterIcon />
-        <FacebookIcon />
-        <LinkedInIcon />
-        <InstagramIcon />
+        <TwitterIcon sx={{ marginRight: "10px" }} />
+        <FacebookIcon sx={{ marginRight: "10px" }} />
+        <LinkedInIcon sx={{ marginRight: "10px" }} />
+        <InstagramIcon sx={{ marginRight: "10px" }} />
       </IconButton>
     </Box>
   );
@@ -76,59 +81,71 @@ const MuiAppBar = (props) => {
         <Box sx={{ display: "flex" }}>
           <CssBaseline />
 
-          <AppBar  style={{ background: "none", boxShadow:'none' }} component="nav">
-            <Toolbar className="container">
-              <Box className="d-flex d-block d-md-none " sx={{border: '1px solid red', width:'100%', justifyContent:'flex-end'}}>
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="end"
-                onClick={handleDrawerToggle}
-                sx={{ mr: 2, display: { sm: "none" } , }}
-              >
-                <MenuIcon sx={{color: '#514E7F'}} />
-              </IconButton>
-              </Box>
-
+          <AppBar
+            // style={{ background: "none", boxShadow: "none" }}
+            component="nav"
+          >
+            <Toolbar className="container mt-3">
               <Typography
                 variant="h6"
                 component="div"
                 sx={{
                   flexGrow: 1,
+                  display: { sm: "block" },
                   color: "#413E66",
-                  fontSize: "28px",
+                  fontSize: "32px",
                   fontWeight: "400",
-                  fontFamily: `"Montserrat", sans-serif`,
+                  fontFamily: "Montserrat, sans-serif",
                   letterSpacing: "3px",
-                  display: { xs: "none", sm: "block" },
                 }}
               >
                 RAPID
               </Typography>
 
-              <Box>
+              <Box sx={{ display: { xs: "none", lg: "block" } }}>
                 {navItems.map((item) => (
                   <Button
                     key={item}
-                    sx={{ color: "#413E66", fontWeight: "bold" }}
+                    sx={{
+                      color: "#413E66",
+                      fontFamily: "Montserrat, sans-serif",
+                    }}
                   >
                     {item}
                   </Button>
                 ))}
+              </Box>
 
+              <Box sx={{ display: { xs: "block" } }}>
                 <IconButton size="large" aria-label="" color="inherit">
-                  <TwitterIcon sx={{ color: "#514E7F" }} />
+                  <TwitterIcon sx={{ color: "#413E66" }} />
                 </IconButton>
                 <IconButton>
-                  <FacebookIcon sx={{ color: "#514E7F" }} />
+                  <FacebookIcon sx={{ color: "#413E66" }} />
                 </IconButton>
                 <IconButton>
-                  <LinkedInIcon sx={{ color: "#514E7F" }} />
+                  <LinkedInIcon sx={{ color: "#413E66" }} />
                 </IconButton>
                 <IconButton>
-                  <InstagramIcon sx={{ color: "#514E7F" }} />
+                  <InstagramIcon sx={{ color: "#413E66" }} />
                 </IconButton>
               </Box>
+
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ display: { sm: "none", md: "block" } }}
+              >
+                <MenuIcon
+                  sx={{
+                    color: "#514E7F",
+                    ml: "15px",
+                    display: { md: "block", lg: "none" },
+                  }}
+                />
+              </IconButton>
             </Toolbar>
           </AppBar>
 
@@ -142,7 +159,7 @@ const MuiAppBar = (props) => {
                 keepMounted: true, // Better open performance on mobile.
               }}
               sx={{
-                display: { md: "none"},
+                display: { md: "none" },
                 "& .MuiDrawer-paper": {
                   boxSizing: "border-box",
                   width: drawerWidth,
