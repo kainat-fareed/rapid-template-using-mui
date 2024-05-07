@@ -13,3 +13,8 @@
 .bg-card1-icon{
     background-color: #FCEEF3;
 }
+
+.card-style:hover{
+    scale: 1.1;
+
+}

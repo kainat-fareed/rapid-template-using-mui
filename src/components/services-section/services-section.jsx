@@ -119,13 +119,13 @@ const ServicesSection = () => {
           </p>
         </Box>
 
-        <Grid container gap={2} className="container">
+        <Grid container gap={8} className="container">
           {cardDummyData?.map((item) => {
             return (
-              <Grid item xs={11.8} sm={5.8} md={3.8}>
-                <Card sx={{ maxWidth: 500 }}>
+              <Grid item xs={11.9} sm={5.4} md={3.5}>
+                <Card sx={{ }} className='card-style'>
                   <CardContent>
-                    <Box className="text-center my-3">
+                    <Box className="text-center">
                      {item?.icon}
                     </Box>
                   </CardContent>
