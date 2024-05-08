@@ -9,11 +9,19 @@ import Card3Image from "../../assets/images/card3.jpg";
 import Web1Image from "../../assets/images/web1.jpg";
 import Web2Image from "../../assets/images/web2.jpg";
 import Web3Image from "../../assets/images/web3.jpg";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import LinkIcon from "@mui/icons-material/Link";
 
 const PortfolioSection = () => {
+
+const ListItems =[
+    
+
+]
+
+
+
   const PortfolioImages = [
     {
       image: { App1Image },
@@ -146,19 +154,96 @@ const PortfolioSection = () => {
         />
       ),
     },
+
+    {
+      image: { Web1Image },
+      heading: "Web1",
+      title: "WEB",
+      addIcon: (
+        <AddCircleIcon
+          sx={{
+            fontSize: "60px",
+          }}
+          className=""
+        />
+      ),
+      linkIcon: (
+        <LinkIcon
+          sx={{
+            fontSize: "60px",
+          }}
+          className=""
+        />
+      ),
+    },
+    {
+      image: { Web2Image },
+      heading: "Web2",
+      title: "WEB",
+      addIcon: (
+        <AddCircleIcon
+          sx={{
+            fontSize: "60px",
+          }}
+          className=""
+        />
+      ),
+      linkIcon: (
+        <LinkIcon
+          sx={{
+            fontSize: "60px",
+          }}
+          className=""
+        />
+      ),
+    },
+
+    {
+      image: { Web3Image },
+      heading: "Web3",
+      title: "WEB",
+      addIcon: (
+        <AddCircleIcon
+          sx={{
+            fontSize: "60px",
+          }}
+          className=""
+        />
+      ),
+      linkIcon: (
+        <LinkIcon
+          sx={{
+            fontSize: "60px",
+          }}
+          className=""
+        />
+      ),
+    },
   ];
 
   return (
     <>
       <Box>
-        <h1>Our Portfolio</h1>
-        <ul>
-          <li>All</li>
+        <h1 className="text-36 montserrat-font fw-bold font-dark-grey text-center mt-5">Our Portfolio</h1>
+        <ul className="list-unstyled d-flex justify-content-center">
+          <li className="mx-5">All</li>
           <li>App</li>
           <li>Card</li>
           <li>Web</li>
         </ul>
       </Box>
+
+      <Grid container>
+        {PortfolioImages?.map((item) => {
+          return (
+            <Grid item xs={12} md={6}>
+              <img src={item?.App1Image} alt="App 1" />
+              <h3></h3>
+              <p></p>
+            </Grid>
+          );
+        })}
+      </Grid>
     </>
   );
 };
