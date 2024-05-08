@@ -19,7 +19,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import "./style/header-style.css";
-import { colors } from "@mui/material";
+
 
 const drawerWidth = 300;
 const navItems = [
@@ -74,6 +74,7 @@ const MuiAppBar = (props) => {
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
+
 
   return (
     <>

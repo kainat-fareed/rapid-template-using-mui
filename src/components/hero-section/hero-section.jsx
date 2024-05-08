@@ -6,7 +6,7 @@ import "./style/hero-section.css";
 export const HeroSection = () => {
   return (
     <>
-      <Box className="container d-flex align-items-center hero-section">
+      <Box className="container d-flex align-items-center hero-section-height">
         <Box className="row gy-3">
           <Box className="col-md-6 d-flex align-items-center order-last order-md-first order-lg-first">
             <Box>
@@ -27,9 +27,7 @@ export const HeroSection = () => {
           </Box>
 
           <Box className="col-md-6">
-            <Box>
-              <img className="img-fluid" src={HeroImage} alt="Group" />
-            </Box>
+            <img className="img-fluid" src={HeroImage} alt="Group" />
           </Box>
         </Box>
       </Box>

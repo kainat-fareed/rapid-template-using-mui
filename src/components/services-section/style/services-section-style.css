@@ -1,20 +1,70 @@
-.text-20{
-    font-size: 16px;
+.text-14 {
+  font-size: 14px;
 }
 
-.services-section-bg-color{
-    background-color: #F5F8FD ;
+.text-16 {
+  font-size: 16px;
 }
 
-.services-para-color{
-    color:#535074;
+.text-18 {
+  font-size: 18px;
 }
 
-.bg-card1-icon{
-    background-color: #FCEEF3;
+.text-36 {
+  font-size: 36px;
 }
 
-.card-style:hover{
-    scale: 1.1;
+.line-height-28 {
+  line-height: 28px;
+}
 
+.services-section-bg-color {
+  background-color: #f5f8fd;
+}
+
+.services-para-color {
+  color: #535074;
+}
+
+.bg-workout-icon {
+  color: #fe689b;
+  background-color: #fceef3;
+}
+
+.bg-checklist-icon {
+  color: #eb9719;
+  background-color: #fff0da;
+}
+
+.bg-barchart-icon {
+  color: #3fcdc7;
+  background-color: #e6fdfc;
+}
+
+.bg-binocular-icon {
+  color: #41cf2e;
+  background-color: #eafde7;
+}
+
+.bg-lightmode-icon {
+  color: #2282ff;
+  background-color: #e1eeff;
+}
+
+.bg-calendar-icon {
+  color: #9271fe;
+  background-color: #ecebff;
+}
+
+.card-heading:hover {
+  color: #1bb1dc;
+  cursor: pointer;
+}
+
+.card-para-color {
+  color: #444;
+}
+
+.card-style:hover {
+  scale: 1.1;
 }

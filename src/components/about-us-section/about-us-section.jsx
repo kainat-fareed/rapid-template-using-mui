@@ -8,7 +8,7 @@ const AboutSection = () => {
   return (
     <>
       <Grid container gap={6} justifyContent={'center'} className={"container my-5"}>
-        <Grid item xs={12} md={5} className="">
+        <Grid item xs={12} md={5}>
           <img className="w-100" src={AboutImage} alt="xyz" />
         </Grid>
         <Grid item className=" w-100" xs={12} md={5}>
@@ -64,25 +64,6 @@ const AboutSection = () => {
         </Grid>
       </Grid>
 
-      {/* <Box className="container pt-5 mt-4">
-        <Box className="row d-flex align-items-center">
-          <Box className="col-lg-5 col-md-6">
-            
-          </Box>
-
-          <Box className="col-lg-7 col-md-6 ml-5">
-            
-
-            <Box>
-              
-            </Box>
-
-            <Box>
-              
-            </Box>
-          </Box>
-        </Box>
-      </Box> */}
     </>
   );
 };
