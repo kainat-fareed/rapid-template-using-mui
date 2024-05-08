@@ -8,6 +8,8 @@ import ServicesSection from "./components/services-section/services-section";
 import WhyChooseUsSection from "./components/why-choose-section/why-choose-section";
 import CallToActionSection from "./components/call-to-action-section/call-to-action-section";
 import FeaturesSection from "./components/features-section/features-section";
+import FeaturesSecondSection from "./components/features-second-section/features-second-section";
+import PortfolioSection from "./components/portfolio-section/portfolio-section";
 
 
 
@@ -26,6 +28,8 @@ function App() {
       <WhyChooseUsSection />
       <CallToActionSection />
       <FeaturesSection/>
+      <FeaturesSecondSection/>
+      <PortfolioSection/>
     </div>
   );
 }
