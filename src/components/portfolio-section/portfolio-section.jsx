@@ -250,75 +250,101 @@ const PortfolioSection = () => {
 
   return (
     <>
-      <div className="text-center my-5">
-        <span
-          className="mx-2"
-          onClick={() => {
-            filterData("all");
-          }}
-        >
-          All
-        </span>
-        <span
-          className="mx-2"
-          onClick={() => {
-            filterData("app");
-          }}
-        >
-          App
-        </span>
-        <span
-          className="mx-2"
-          onClick={() => {
-            filterData("card");
-          }}
-        >
-          Card
-        </span>
-        <span
-          className="mx-2"
-          onClick={() => {
-            filterData("web");
-          }}
-        >
-          Web
-        </span>
-      </div>
+      <Box className="portfolio-section-bg-color py-5">
+        <h1 className="text-36 montserrat-font fw-bold font-dark-grey text-center mt-3">
+          Our Portfolio
+        </h1>
 
-      <Box className="container">
-        <Grid container xs={12} gap={1}>
-          <Grid item xs={12} md={3.9}>
-            { filterArrOne?.length > 0 ? false : true &&  <Grid container md={12} gap={2}>
-              {(filterArrOne?.length > 0 ? filterArrOne : arrColumnOne)?.map(
-                (item) => {
-                  return <img src={item?.image} className="img-fluid" alt="" />;
-                }
-              )}
-            </Grid>}
-          </Grid>
-          <Grid item xs={12} md={3.9}>
-           {filterArrTwo?.length > 0 ? false : true && <Grid container md={12} gap={2}>
-              {(filterArrTwo?.length > 0 ? filterArrTwo : arrColumnTwo)?.map(
-                (item) => {
-                  return <img src={item?.image} className="img-fluid" alt="" />;
-                }
-              )}
-            </Grid>}
-          </Grid>
-          <Grid item xs={12} md={3.9}>
-            {filterArrThree?.length > 0 ? false : true &&<Grid container md={12} gap={2}>
-              {(filterArrThree?.length > 0
-                ? filterArrThree
-                : arrColumnThree
-              )?.map((item) => {
-                return <img src={item?.image} className="img-fluid" alt="" />;
-              })}
-            </Grid>}
-          </Grid>
-        </Grid>
-      </Box>
+        <div className="text-center my-5">
+          <span
+            className="mx-2 opens-font text-16 portfolio-link-color active-link"
+            onClick={() => {
+              filterData("all");
+            }}
+          >
+            All
+          </span>
+          <span
+            className="mx-2 opens-font text-16 portfolio-link-color"
+            onClick={() => {
+              filterData("app");
+            }}
+          >
+            App
+          </span>
+          <span
+            className="mx-2 opens-font text-16 portfolio-link-color"
+            onClick={() => {
+              filterData("card");
+            }}
+          >
+            Card
+          </span>
+          <span
+            className="mx-2 opens-font text-16 portfolio-link-color"
+            onClick={() => {
+              filterData("web");
+            }}
+          >
+            Web
+          </span>
+        </div>
 
-      {/* <Box className='d-flex'>
+        <Box className="container pb-4">
+          <Grid container xs={12} gap={1}>
+            <Grid item xs={12} md={3.9}>
+              {filterArrOne?.length > 0
+                ? false
+                : true && (
+                    <Grid container md={12} gap={2}>
+                      {(filterArrOne?.length > 0
+                        ? filterArrOne
+                        : arrColumnOne
+                      )?.map((item) => {
+                        return (
+                          <img src={item?.image} className="img-fluid image" alt="" />
+                        );
+                        
+                      })}
+                    </Grid>
+                  )}
+            </Grid>
+            <Grid item xs={12} md={3.9}>
+              {filterArrTwo?.length > 0
+                ? false
+                : true && (
+                    <Grid container md={12} gap={2}>
+                      {(filterArrTwo?.length > 0
+                        ? filterArrTwo
+                        : arrColumnTwo
+                      )?.map((item) => {
+                        return (
+                          <img src={item?.image} className="img-fluid" alt="" />
+                        );
+                      })}
+                    </Grid>
+                  )}
+            </Grid>
+            <Grid item xs={12} md={3.9}>
+              {filterArrThree?.length > 0
+                ? false
+                : true && (
+                    <Grid container md={12} gap={2}>
+                      {(filterArrThree?.length > 0
+                        ? filterArrThree
+                        : arrColumnThree
+                      )?.map((item) => {
+                        return (
+                          <img src={item?.image} className="img-fluid" alt="" />
+                        );
+                      })}
+                    </Grid>
+                  )}
+            </Grid>
+          </Grid>
+        </Box>
+
+        {/* <Box className='d-flex'>
         <Grid container className="d-flex flex-column">
           {arrColumnOne?.map((item) => {
             return (
@@ -348,6 +374,7 @@ const PortfolioSection = () => {
           })}
         </Grid>
       </Box> */}
+      </Box>
     </>
   );
 };

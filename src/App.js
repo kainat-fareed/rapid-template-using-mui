@@ -10,6 +10,9 @@ import CallToActionSection from "./components/call-to-action-section/call-to-act
 import FeaturesSection from "./components/features-section/features-section";
 import FeaturesSecondSection from "./components/features-second-section/features-second-section";
 import PortfolioSection from "./components/portfolio-section/portfolio-section";
+import TestimonialSection from "./components/testimonial-section/testimonial-section";
+import TeamSection from "./components/team-section/team-section";
+import ClientSection from "./components/client-section/client-section";
 
 
 
@@ -30,6 +33,9 @@ function App() {
       <FeaturesSection/>
       <FeaturesSecondSection/>
       <PortfolioSection/>
+      <TestimonialSection/>
+      <TeamSection/>
+      <ClientSection/>
     </div>
   );
 }

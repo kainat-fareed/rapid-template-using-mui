@@ -76,13 +76,13 @@ const WhyChooseUsSection = () => {
 
       <Grid
         container
-        gap={6}
+        gap={4}
         className="container-fluid mt-5"
       >
-        <Grid item xs={12} md={5.7}>
+        <Grid item xs={12} lg={5.8}>
           <img className="w-100" src={WhyUsImage} alt="Why-us-group" />
         </Grid>
-        <Grid item xs={12} md={5.7}>
+        <Grid item xs={12} lg={5.8}>
           <p className="opens-font text-16 para-color">
             Molestiae omnis numquam corrupti omnis itaque. Voluptatum quidem
             impedit. Odio dolorum exercitationem est error omnis repudiandae ad

@@ -1,0 +1,48 @@
+.team-section-bg {
+  background-color: #f5f8fd;
+}
+
+.text-36 {
+  font-size: 36px;
+}
+
+
+.text-20{
+    font-size: 20px;
+}
+
+
+.text-18{
+    font-size: 18px;
+}
+
+.text-15 {
+  font-size: 15px;
+}
+
+.text-13 {
+    font-size: 13px;
+  }
+
+
+.text-gray {
+  color: #535074;
+}
+
+.member-info-text {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: 0.2s;
+  padding: 15px 0;
+  background: rgba(29, 28, 41, 0.6);
+}
+
+.member:hover .member-info-text:hover{
+    transition: 0.4s;
+}
+
+.icon-hover:hover{
+    color: #1bb1dc !important;
+    cursor: pointer;
+}

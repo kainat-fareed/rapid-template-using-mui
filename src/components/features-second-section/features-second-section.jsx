@@ -6,8 +6,8 @@ import { Grid } from "@mui/material";
 const FeaturesSecondSection = () => {
   return (
     <>
-      <Grid container gap={6} className="container mt-5 pt-4">
-        <Grid item xs={12} md={5.7}>
+      <Grid container gap={4} className="container mt-5 pt-4">
+        <Grid item xs={12} lg={5.8}>
           <h4 className="text-24 montserrat-font fw-bold font-dark-grey mb-4">
             Neque saepe temporibus repellat ea ipsum et. Id vel et quia tempora
             facere reprehenderit.
@@ -29,7 +29,7 @@ const FeaturesSecondSection = () => {
             accusantium provident quia.
           </p>
         </Grid>
-        <Grid item xs={12} md={5.7}>
+        <Grid item xs={12} lg={5.8}>
           <img className="w-100" src={featureImageSecond} alt="feature2" />
         </Grid>
       </Grid>
