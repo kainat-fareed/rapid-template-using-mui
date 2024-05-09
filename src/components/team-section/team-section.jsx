@@ -49,34 +49,55 @@ const TeamSection = () => {
         <Grid container gap={3} className="container my-5">
           {teamProfiles?.map((item) => {
             return (
-              <Grid
-                item
-                sm={12}
-                md={5.7}
-                lg={2.8}
-                className="d-flex position-relative"
-              >
-                <div className="member">
-                <img
-                  className="img-fluid"
-                  src={item.image}
-                  alt="Team Profile"
-                />
-                <Box className="position-absolute member-info-text">
-                  <h1 className="montserrat-font text-white text-18 fw-bold">
-                    {item?.name}
-                  </h1>
-                  <span className="opens-font text-white text-13 fst-italic">
-                    {item?.title}
-                  </span>
-                  <Box>
-                    <TwitterIcon className="text-white text-20 mx-1 icon-hover" />
-                    <FacebookIcon className="text-white text-20 mx-1 icon-hover" />
-                    <LinkedInIcon className="text-white text-20 mx-1 icon-hover" />
-                    <InstagramIcon className="text-white text-20 mx-1 icon-hover" />
-                  </Box>
-                </Box>
+              <Grid item sm={12} md={5.7} lg={2.8} className="d-flex">
+                <div className="testimonials">
+                  <div class="show">
+                    <img
+                      className="img-fluid"
+                      src={item.image}
+                      alt="Team Profile"
+                    />
+                  </div>
+                  <div class="hide">
+                    <Box className=" member-info-text">
+                      <h1 className="montserrat-font text-white text-18 fw-bold">
+                        {item?.name}
+                      </h1>
+                      <span className="opens-font text-white text-13 fst-italic">
+                        {item?.title}
+                      </span>
+                      <Box>
+                        <TwitterIcon className="text-white text-20 mx-1 icon-hover" />
+                        <FacebookIcon className="text-white text-20 mx-1 icon-hover" />
+                        <LinkedInIcon className="text-white text-20 mx-1 icon-hover" />
+                        <InstagramIcon className="text-white text-20 mx-1 icon-hover" />
+                      </Box>
+                    </Box>
+                  </div>
                 </div>
+                {/* <div className="member">
+                  <Box className='show'>
+                    <img
+                      className="img-fluid"
+                      src={item.image}
+                      alt="Team Profile"
+                    />
+                  </Box>
+                  <Box className="position-absolute member-info-text">
+                    <h1 className="montserrat-font text-white text-18 fw-bold">
+                      {item?.name}
+                    </h1>
+                    <span className="opens-font text-white text-13 fst-italic">
+                      {item?.title}
+                    </span>
+                    <Box>
+                      <TwitterIcon className="text-white text-20 mx-1 icon-hover" />
+                      <FacebookIcon className="text-white text-20 mx-1 icon-hover" />
+                      <LinkedInIcon className="text-white text-20 mx-1 icon-hover" />
+                      <InstagramIcon className="text-white text-20 mx-1 icon-hover" />
+                    </Box>
+                  </Box>
+                </div> */}
               </Grid>
             );
           })}
