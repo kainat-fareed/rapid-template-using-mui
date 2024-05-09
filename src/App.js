@@ -14,13 +14,13 @@ import TestimonialSection from "./components/testimonial-section/testimonial-sec
 import TeamSection from "./components/team-section/team-section";
 import ClientSection from "./components/client-section/client-section";
 
-
-
 import "./App.css";
+import HeaderHOC from "./components/hoc/header";
 
 function App() {
   return (
     <div className="App">
+      <HeaderHOC />
       <div class="bg-image">
         <Header />
         <HeroSection />
@@ -30,12 +30,12 @@ function App() {
       <ServicesSection />
       <WhyChooseUsSection />
       <CallToActionSection />
-      <FeaturesSection/>
-      <FeaturesSecondSection/>
-      <PortfolioSection/>
-      <TestimonialSection/>
-      <TeamSection/>
-      <ClientSection/>
+      <FeaturesSection />
+      <FeaturesSecondSection />
+      <PortfolioSection />
+      <TestimonialSection />
+      <TeamSection />
+      <ClientSection />
     </div>
   );
 }
