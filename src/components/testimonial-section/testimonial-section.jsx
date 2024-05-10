@@ -10,7 +10,7 @@ import Testimonial3 from "../../assets/images/testimonial-3.jpg";
 import Testimonial4 from "../../assets/images/testimonial-4.jpg";
 
 const TestimonialSection = () => {
-  const arrOneTestimonial = [
+  const arrTestimonial = [
     {
       image: Testimonial1,
       name: "Saul Goodman",
@@ -32,6 +32,13 @@ const TestimonialSection = () => {
       descp:
         "Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.",
     },
+    {
+      image: Testimonial4,
+      name: "Matt Brandon",
+      occupation: "Freelancer",
+      descp:
+        "Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.",
+    },
   ];
 
   return (
@@ -44,7 +51,7 @@ const TestimonialSection = () => {
         modules={[Pagination]}
         className="mySwiper"
       >
-        {arrOneTestimonial?.map((item) => {
+        {arrTestimonial?.map((item) => {
           return (
             <SwiperSlide>
               <Box className="d-flex justify-content-center my-5">

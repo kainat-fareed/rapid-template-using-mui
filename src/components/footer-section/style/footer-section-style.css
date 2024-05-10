@@ -1,0 +1,29 @@
+.footer-bg{
+    background-color: #F5F8FD;
+}
+
+.text-34{
+font-size: 34px;
+}
+
+.text-14{
+    font-size: 14px;
+}
+
+.footer-para1{
+    font-size: 13px;
+    line-height: 24px;
+    color: #535074;
+}
+
+.footer-text-color{
+    color:#444 !important;
+}
+
+.icon-hover-color:hover{
+    background-color: #0a98c0 !important;
+}
+
+.icon:hover{
+    color:#ffffff !important;
+}

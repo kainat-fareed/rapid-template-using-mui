@@ -1,0 +1,59 @@
+.section-bg-color {
+  background-color: #f5f8fd;
+}
+
+.text-64 {
+  font-size: 64px;
+}
+
+.text-16 {
+  font-size: 16px;
+}
+
+.text-23{
+    font-size: 23px;
+}
+
+.item-color {
+    color: #413e66;
+}
+
+.currency {
+  font-size: 30px;
+  position: relative;
+  font-weight: 400;
+  top: -30px;
+}
+
+.period {
+    font-size: 16px;
+    color: #6c67a3;
+ 
+  }
+
+.btn-choose-plan{
+    background-color: #1bb1dc !important;
+    font-size: 13px !important;
+    letter-spacing: 1px !important;
+}
+
+.plan-heading-color{
+    color: #535074;
+}
+
+.card-style:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background-color: #1bb1dc;
+    transition: 0.5s;
+  }
+
+  
+.card-style:hover {
+    transform: scale(0.9);
+    box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.08);
+  }

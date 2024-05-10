@@ -11,7 +11,7 @@
 }
 
 .montserrat-font {
-  font-family: var(--primary-font-family);
+  font-family: var(--primary-font-family) !important;
 }
 
 :root {
@@ -19,7 +19,7 @@
 }
 
 .opens-font {
-  font-family: var(--secondary-font-family);
+  font-family: var(--secondary-font-family) !important;
 }
 
 .font-dark-grey {
