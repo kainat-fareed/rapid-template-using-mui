@@ -45,14 +45,14 @@ const useStyles = styled((theme) => ({
 
 const MuiAppBar = (props) => {
   const classes = useStyles();
-  const [isSticky, setIsSticky] = useState(false);
+  const [isSticky, setIsSticky] = useState();
 
   console.log(isSticky, "isSticky");
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      setIsSticky(scrollY > 0);
+      setIsSticky(scrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -99,18 +99,23 @@ const MuiAppBar = (props) => {
     </Box>
   );
 
+
+  const bg= isSticky > 0 ? 'bg-success': ''
+
+  console.log(bg, 'bg');
+
   return (
     <>
       <div>
         <Box sx={{ display: "flex" }}>
           <CssBaseline />
 
-          <Box position={'fixed'} height={100}  className={`${classes.appBar} ${isSticky && classes.sticky} border border-success bg-success w-100`}>
+          <Box position={'fixed'} height={100}  className={` ${ bg}w-100`}>
             <AppBar
               // className="header"
               style={{
-                background: "none",
-                boxShadow: "none",
+                background: isSticky > 0 ? 'white': 'none',
+                boxShadow: isSticky > 0 ? '3': '0',
               }}
               component="nav"
             >
