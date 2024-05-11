@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -19,7 +19,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import "./style/header-style.css";
-
+import { styled } from "@mui/material/styles";
 
 const drawerWidth = 300;
 const navItems = [
@@ -32,10 +32,37 @@ const navItems = [
   "CONTACT",
 ];
 
-const MuiAppBar = (props) => {
-  const { window } = props;
+const useStyles = styled((theme) => ({
+  appBar: {
+    transition: "0.5s",
+  },
+  sticky: {
+    background: "rgba(200,200,200, 0.9)",
+    boxShadow: "0 5px 20px rgba(0,0,0,0.05)",
+    padding: "10px 100px",
+  },
+}));
 
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+const MuiAppBar = (props) => {
+  const classes = useStyles();
+  const [isSticky, setIsSticky] = useState(false);
+
+  console.log(isSticky, "isSticky");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setIsSticky(scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -72,87 +99,89 @@ const MuiAppBar = (props) => {
     </Box>
   );
 
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
-
-
   return (
     <>
       <div>
         <Box sx={{ display: "flex" }}>
           <CssBaseline />
 
-          <AppBar
-            // style={{ background: "none", boxShadow: "none" }}
-            component="nav"
-          >
-            <Toolbar className="container mt-3">
-              <Typography
-                variant="h6"
-                component="div"
-                sx={{
-                  flexGrow: 1,
-                  display: { sm: "block" },
-                  color: "#413E66",
-                  fontSize: "32px",
-                  fontWeight: "400",
-                  fontFamily: "Montserrat, sans-serif",
-                  letterSpacing: "3px",
-                }}
-              >
-                RAPID
-              </Typography>
-
-              <Box sx={{ display: { xs: "none", lg: "block" } }}>
-                {navItems.map((item) => (
-                  <Button
-                    key={item}
-                    sx={{
-                      color: "#413E66",
-                      fontFamily: "Montserrat, sans-serif",
-                    }}
-                  >
-                    {item}
-                  </Button>
-                ))}
-              </Box>
-
-              <Box sx={{ display: { xs: "block" } }}>
-                <IconButton size="large" aria-label="" color="inherit">
-                  <TwitterIcon sx={{ color: "#413E66" }} />
-                </IconButton>
-                <IconButton>
-                  <FacebookIcon sx={{ color: "#413E66" }} />
-                </IconButton>
-                <IconButton>
-                  <LinkedInIcon sx={{ color: "#413E66" }} />
-                </IconButton>
-                <IconButton>
-                  <InstagramIcon sx={{ color: "#413E66" }} />
-                </IconButton>
-              </Box>
-
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggle}
-                sx={{ display: { sm: "none", md: "block" } }}
-              >
-                <MenuIcon
+          <Box position={'fixed'} height={100}  className={`${classes.appBar} ${isSticky && classes.sticky} border border-success bg-success w-100`}>
+            <AppBar
+              // className="header"
+              style={{
+                background: "none",
+                boxShadow: "none",
+              }}
+              component="nav"
+            >
+              <Toolbar className="container mt-3">
+                <Typography
+                  variant="h6"
+                  component="div"
                   sx={{
-                    color: "#514E7F",
-                    ml: "15px",
-                    display: { md: "block", lg: "none" },
+                    flexGrow: 1,
+                    display: { sm: "block" },
+                    color: "#413E66",
+                    fontSize: "32px",
+                    fontWeight: "400",
+                    fontFamily: "Montserrat, sans-serif",
+                    letterSpacing: "3px",
                   }}
-                />
-              </IconButton>
-            </Toolbar>
-          </AppBar>
+                >
+                  RAPID
+                </Typography>
+
+                <Box sx={{ display: { xs: "none", lg: "block" } }}>
+                  {navItems.map((item) => (
+                    <Button
+                      key={item}
+                      sx={{
+                        color: "#413E66",
+                        fontFamily: "Montserrat, sans-serif",
+                      }}
+                    >
+                      {item}
+                    </Button>
+                  ))}
+                </Box>
+
+                <Box sx={{ display: { xs: "block" } }}>
+                  <IconButton size="large" aria-label="" color="inherit">
+                    <TwitterIcon sx={{ color: "#413E66" }} />
+                  </IconButton>
+                  <IconButton>
+                    <FacebookIcon sx={{ color: "#413E66" }} />
+                  </IconButton>
+                  <IconButton>
+                    <LinkedInIcon sx={{ color: "#413E66" }} />
+                  </IconButton>
+                  <IconButton>
+                    <InstagramIcon sx={{ color: "#413E66" }} />
+                  </IconButton>
+                </Box>
+
+                <IconButton
+                  color="inherit"
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={handleDrawerToggle}
+                  sx={{ display: { sm: "none", md: "block" } }}
+                >
+                  <MenuIcon
+                    sx={{
+                      color: "#514E7F",
+                      ml: "15px",
+                      display: { md: "block", lg: "none" },
+                    }}
+                  />
+                </IconButton>
+              </Toolbar>
+            </AppBar>
+          </Box>
 
           <nav>
             <Drawer
-              container={container}
+              // container={container}
               variant="temporary"
               open={mobileOpen}
               onClose={handleDrawerToggle}
