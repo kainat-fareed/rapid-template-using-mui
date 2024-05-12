@@ -91,6 +91,7 @@ const PortfolioSection = () => {
     },
   ];
 
+  console.log(arrColumnOne, filterArrOne, "filterabc");
   const arrColumnTwo = [
     {
       category: "web",
@@ -292,27 +293,30 @@ const PortfolioSection = () => {
 
         <Box className="container pb-4">
           <Grid container xs={12} gap={1}>
-            <Grid item xs={12} md={3.9}>
-              {filterArrOne?.length > 0
-                ? false
-                : true && (
+            {filterArrOne?.length > 0
+              ? false
+              : true && (
+                  <Grid item xs={12} md={3.9}>
                     <Grid container md={12} gap={2}>
                       {(filterArrOne?.length > 0
                         ? filterArrOne
                         : arrColumnOne
                       )?.map((item) => {
                         return (
-                          <img src={item?.image} className="img-fluid image" alt="" />
+                          <img
+                            src={item?.image}
+                            className="img-fluid image"
+                            alt=""
+                          />
                         );
-                        
                       })}
                     </Grid>
-                  )}
-            </Grid>
-            <Grid item xs={12} md={3.9}>
-              {filterArrTwo?.length > 0
-                ? false
-                : true && (
+                  </Grid>
+                )}
+            {filterArrTwo?.length > 0
+              ? false
+              : true && (
+                  <Grid item xs={12} md={3.9}>
                     <Grid container md={12} gap={2}>
                       {(filterArrTwo?.length > 0
                         ? filterArrTwo
@@ -323,12 +327,12 @@ const PortfolioSection = () => {
                         );
                       })}
                     </Grid>
-                  )}
-            </Grid>
-            <Grid item xs={12} md={3.9}>
-              {filterArrThree?.length > 0
-                ? false
-                : true && (
+                  </Grid>
+                )}
+            {filterArrThree?.length > 0
+              ? false
+              : true && (
+                  <Grid item xs={12} md={3.9}>
                     <Grid container md={12} gap={2}>
                       {(filterArrThree?.length > 0
                         ? filterArrThree
@@ -339,41 +343,10 @@ const PortfolioSection = () => {
                         );
                       })}
                     </Grid>
-                  )}
-            </Grid>
+                  </Grid>
+                )}
           </Grid>
         </Box>
-
-        {/* <Box className='d-flex'>
-        <Grid container className="d-flex flex-column">
-          {arrColumnOne?.map((item) => {
-            return (
-              <Grid item xs={12} md={6}>
-                <img className="w-100" src={item?.image} alt="App 1" />
-              </Grid>
-            );
-          })}
-        </Grid>
-
-        <Grid container className="d-flex flex-column">
-          {arrColumnTwo?.map((item) => {
-            return (
-              <Grid item xs={12} md={6}>
-                <img className="w-100" src={item?.image} alt="App 1" />
-              </Grid>
-            );
-          })}
-        </Grid>
-        <Grid container className="d-flex flex-column">
-          {arrColumnThree?.map((item) => {
-            return (
-              <Grid item xs={12} md={6}>
-                <img className="w-100" src={item?.image} alt="App 1" />
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Box> */}
       </Box>
     </>
   );

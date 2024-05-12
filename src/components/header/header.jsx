@@ -99,90 +99,84 @@ const MuiAppBar = (props) => {
     </Box>
   );
 
-
-  const bg= isSticky > 0 ? 'bg-success': ''
-
-  console.log(bg, 'bg');
-
   return (
     <>
       <div>
         <Box sx={{ display: "flex" }}>
           <CssBaseline />
 
-          <Box position={'fixed'} height={100}  className={` ${ bg}w-100`}>
-            <AppBar
-              // className="header"
-              style={{
-                background: isSticky > 0 ? 'white': 'none',
-                boxShadow: isSticky > 0 ? '3': '0',
-              }}
-              component="nav"
-            >
-              <Toolbar className="container mt-3">
-                <Typography
-                  variant="h6"
-                  component="div"
-                  sx={{
-                    flexGrow: 1,
-                    display: { sm: "block" },
-                    color: "#413E66",
-                    fontSize: "32px",
-                    fontWeight: "400",
-                    fontFamily: "Montserrat, sans-serif",
-                    letterSpacing: "3px",
-                  }}
-                >
-                  RAPID
-                </Typography>
+          <AppBar
+            // className="header"
+            style={{
+              background: isSticky > 0 ? "white" : "none",
+              boxShadow: "none",
+              borderBottom: isSticky > 0 ? "2px solid rgba(0,0,0,0.2)" : "",
+            }}
+            component="nav"
+          >
+            <Toolbar className="container mt-3">
+              <Typography
+                variant="h6"
+                component="div"
+                sx={{
+                  flexGrow: 1,
+                  display: { sm: "block" },
+                  color: "#413E66",
+                  fontSize: "32px",
+                  fontWeight: "400",
+                  fontFamily: "Montserrat, sans-serif",
+                  letterSpacing: "3px",
+                }}
+              >
+                RAPID
+              </Typography>
 
-                <Box sx={{ display: { xs: "none", lg: "block" } }}>
-                  {navItems.map((item) => (
-                    <Button
-                      key={item}
-                      sx={{
-                        color: "#413E66",
-                        fontFamily: "Montserrat, sans-serif",
-                      }}
-                    >
-                      {item}
-                    </Button>
-                  ))}
-                </Box>
-
-                <Box sx={{ display: { xs: "block" } }}>
-                  <IconButton size="large" aria-label="" color="inherit">
-                    <TwitterIcon sx={{ color: "#413E66" }} />
-                  </IconButton>
-                  <IconButton>
-                    <FacebookIcon sx={{ color: "#413E66" }} />
-                  </IconButton>
-                  <IconButton>
-                    <LinkedInIcon sx={{ color: "#413E66" }} />
-                  </IconButton>
-                  <IconButton>
-                    <InstagramIcon sx={{ color: "#413E66" }} />
-                  </IconButton>
-                </Box>
-
-                <IconButton
-                  color="inherit"
-                  aria-label="open drawer"
-                  edge="start"
-                  onClick={handleDrawerToggle}
-                  sx={{ display: { sm: "none", md: "block" } }}
-                >
-                  <MenuIcon
+              <Box sx={{ display: { xs: "none", lg: "block" } }}>
+                {navItems.map((item) => (
+                  <Button
+                    key={item}
                     sx={{
-                      color: "#514E7F",
-                      ml: "15px",
-                      display: { md: "block", lg: "none" },
+                      color: "#413E66",
+                      fontFamily: "Montserrat, sans-serif",
                     }}
-                  />
+                  >
+                    {item}
+                  </Button>
+                ))}
+              </Box>
+
+              <Box sx={{ display: { xs: "block" } }}>
+                <IconButton size="large" aria-label="" color="inherit">
+                  <TwitterIcon sx={{ color: "#413E66" }} />
                 </IconButton>
-              </Toolbar>
-            </AppBar>
-          </Box>
+                <IconButton>
+                  <FacebookIcon sx={{ color: "#413E66" }} />
+                </IconButton>
+                <IconButton>
+                  <LinkedInIcon sx={{ color: "#413E66" }} />
+                </IconButton>
+                <IconButton>
+                  <InstagramIcon sx={{ color: "#413E66" }} />
+                </IconButton>
+              </Box>
+
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ display: { sm: "none", md: "block" } }}
+              >
+                <MenuIcon
+                  sx={{
+                    color: "#514E7F",
+                    ml: "15px",
+                    display: { md: "block", lg: "none" },
+                  }}
+                />
+              </IconButton>
+            </Toolbar>
+          </AppBar>
 
           <nav>
             <Drawer

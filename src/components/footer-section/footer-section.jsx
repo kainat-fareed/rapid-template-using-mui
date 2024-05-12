@@ -14,8 +14,6 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 const FooterSection = () => {
-  
-  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -73,7 +71,7 @@ const FooterSection = () => {
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} lg={6}>
+            <Grid item xs={12} lg={6} mt={8}>
               <h2 className="opens-font text-14 footer-text-color fw-bold">
                 USEFUL LINKS
               </h2>
@@ -187,17 +185,25 @@ const FooterSection = () => {
                     label="Message"
                     multiline
                     fullWidth
-                    maxRows={4}
+                    minRows={5}
                   />
                 </div>
-                <Button
-                  variant="contained"
-                  type="button"
-                  className="d-flex justify-content-center mt-4"
-                  onClick={submitHandler}
-                >
-                  Send Message
-                </Button>
+                <div className="d-flex justify-content-center">
+                  <Button
+                    variant="contained"
+                    type="button"
+                    className="d-flex justify-content-center mt-4"
+                    onClick={submitHandler}
+                    fullWidth
+                    sx={{
+                      "&:hover": {
+                       letterSpacing: '3pxz'
+                      },
+                    }}
+                  >
+                    Send Message
+                  </Button>
+                </div>
               </form>
             </Box>
           </Grid>
